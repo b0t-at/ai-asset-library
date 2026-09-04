@@ -35,7 +35,8 @@
     .logo-tile--accent { background: #00646d; color: #f7f7f6; }
     .demo-app { display: grid; grid-template-columns: 14rem 1fr; min-height: 22rem; }
     .demo-app aside { padding: var(--b0t-space-4); border-right: 1px solid var(--b0t-color-border); background: var(--b0t-color-bg-subtle); }
-    .demo-app main { padding: var(--b0t-space-6); }
+    .demo-app__main { padding: var(--b0t-space-6); }
+    .spec-h1 { font-size: var(--b0t-font-size-3xl); font-weight: var(--b0t-font-weight-semibold); letter-spacing: var(--b0t-font-tracking-tight); line-height: var(--b0t-font-leading-tight); text-wrap: balance; }
     @media (max-width: 40rem) { .demo-app { grid-template-columns: 1fr; } .demo-app aside { border-right: 0; border-bottom: 1px solid var(--b0t-color-border); } }
   </style>
 </head>
@@ -119,7 +120,7 @@
     <section id="type">
       <h2>Typography</h2>
       <div class="type-row"><code>5xl / display</code><div style="font-size: var(--b0t-font-size-5xl); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">Winget, tamed.</div></div>
-      <div class="type-row"><code>3xl / h1</code><h1>Package updates for 1,284 manifests</h1></div>
+      <div class="type-row"><code>3xl / h1</code><p class="spec-h1">Package updates for 1,284 manifests</p></div>
       <div class="type-row"><code>2xl / h2</code><h2 style="margin:0">Open pull requests</h2></div>
       <div class="type-row"><code>xl / h3</code><h3>Validation pipeline</h3></div>
       <div class="type-row"><code>md / body</code><p>Body text sits at 16px with 1.5 line-height. Paragraphs are limited to 65 characters per line in prose contexts, which is where <a href="#">links look like this</a>. Numbers like 4,096 and 0.25 use tabular figures in tables.</p></div>
@@ -241,7 +242,7 @@
                 <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Settings</a>
               </nav>
             </aside>
-            <main>
+            <div class="demo-app__main">
               <ol class="b0t-breadcrumb" style="margin-bottom: var(--b0t-space-4)"><li><a href="#">winget-pkgs-updates</a></li><li><a href="#">Runs</a></li><li aria-current="page">#4127</li></ol>
               <div class="b0t-tabs" role="tablist" style="margin-bottom: var(--b0t-space-6)">
                 <button class="b0t-tab" role="tab" aria-selected="true">Summary</button>
@@ -259,7 +260,7 @@
                 <div class="b0t-cluster b0t-cluster--between b0t-text-sm"><span>Publishing manifests</span><span class="b0t-text-muted b0t-tabular">37 / 39</span></div>
                 <div class="b0t-progress" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"><span style="--value: 95%"></span></div>
               </div>
-            </main>
+            </div>
           </div>
         </div>
 
@@ -316,7 +317,7 @@
     <!-- BRAND -->
     <section id="brand" style="border-bottom: 0">
       <h2>Brand</h2>
-      <p class="b0t-text-muted" style="max-width: 60ch; margin-bottom: var(--b0t-space-6)">The wordmark is built from three monoline glyphs. The slashed zero is the mark: a nod to terminals and to "zero ambiguity" — it works alone as favicon and app icon.</p>
+      <p class="b0t-text-muted" style="max-width: 60ch; margin-bottom: var(--b0t-space-6)">The wordmark is built from three monoline glyphs. The dotted zero is the mark: a lens, an eye, a terminal zero — it works alone as favicon and app icon.</p>
       <div class="b0t-grid" style="--b0t-grid-min: 14rem">
         <div class="logo-tile logo-tile--light"><img src="../brand/logo/b0t-wordmark.svg" alt="b0t wordmark on light"></div>
         <div class="logo-tile logo-tile--dark"><img src="../brand/logo/b0t-wordmark-dark.svg" alt="b0t wordmark on dark"></div>

@@ -21,9 +21,15 @@ const types = {
 };
 
 createServer(async (req, res) => {
-  const url = new URL(req.url, "http://localhost");
-  const rel = normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, "");
-  let file = join(root, rel === "\\" || rel === "/" ? "examples/showcase.html" : rel);
+  let file;
+  try {
+    const url = new URL(req.url, "http://localhost");
+    const rel = normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, "");
+    file = join(root, rel === "\\" || rel === "/" ? "examples/showcase.html" : rel);
+  } catch {
+    res.writeHead(400, { "content-type": "text/plain" }).end("bad request");
+    return;
+  }
   if (!file.startsWith(root)) {
     res.writeHead(403).end();
     return;

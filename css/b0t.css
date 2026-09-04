@@ -1265,9 +1265,22 @@
     color: var(--b0t-color-fg);
   }
 
+  /* Popover API: without anchor positioning the menu falls back to the UA's centered placement,
+     which works everywhere. Browsers with CSS anchor positioning attach it below the invoker
+     (the implicit anchor of a popover opened via `popovertarget`). */
   .b0t-menu[popover] {
-    inset: unset;
-    margin: 0;
+    margin: auto;
+  }
+
+  @supports (top: anchor(bottom)) {
+    .b0t-menu[popover] {
+      position-anchor: auto;
+      inset: auto;
+      margin: var(--b0t-space-1) 0 0;
+      top: anchor(bottom);
+      left: anchor(left);
+      position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+    }
   }
 
   .b0t-menu__item {

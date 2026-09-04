@@ -55,7 +55,7 @@ Underline tabs, 2px petrol indicator, muted labels. `role="tablist"` / `role="ta
 
 ## Menu `.b0t-menu`
 
-Works with the Popover API (`popover` attribute + `popovertarget`). 8px radius, `md` shadow, 4px inner padding, items 36px. Destructive item last, after a separator, in `danger-fg`.
+Works with the Popover API: `<button popovertarget="id">` + `<div class="b0t-menu" id="id" popover>`. In browsers with CSS anchor positioning (Chromium 125+, Safari 26+) the menu opens directly below its invoker and flips when it would overflow; elsewhere it falls back to the browser's centered popover placement, which is functional. If you open a menu from script instead of `popovertarget`, set `anchor-name` on the trigger and `position-anchor` on the menu, or position it yourself. 8px radius, `md` shadow, 4px inner padding, items 36px. Destructive item last, after a separator, in `danger-fg`.
 
 ## Dialog `.b0t-dialog`
 
