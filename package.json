@@ -1,6 +1,6 @@
 {
   "name": "@b0t-at/design",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Design foundation for b0t-at: tokens, CSS, Tailwind theme, brand assets and guidelines.",
   "license": "UNLICENSED",
   "private": false,
@@ -32,8 +32,10 @@
     "./tokens/*": "./tokens/*"
   },
   "scripts": {
-    "build": "node scripts/build-tokens.mjs",
-    "check": "node scripts/build-tokens.mjs --check",
+    "build": "node scripts/build-tokens.mjs && node scripts/build-brand.mjs",
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "build:brand": "node scripts/build-brand.mjs",
+    "check": "node scripts/build-tokens.mjs --check && node scripts/build-brand.mjs --check",
     "preview": "node scripts/preview.mjs"
   },
   "engines": {

@@ -1,4 +1,5 @@
-// b0t design tokens — generated. Do not edit by hand.
+// b0t design tokens v0.1.1 — generated. Do not edit by hand.
+export const version = "0.1.1";
 export const prefix = "b0t";
 export const tokens = {
   "color.ink.0": "#ffffff",

@@ -9,7 +9,7 @@ This project follows the **b0t-at design foundation**: https://github.com/b0t-at
 
 Non-negotiables:
 
-- Use the shared tokens (`--b0t-*` CSS variables via the CDN bundle, or the Tailwind v4 theme from `@b0t-at/design`). No hex codes, no Tailwind default palette, no primitive scales in project code.
+- Use the shared tokens (`--b0t-*` CSS variables via the `b0t.css` bundle — vendored with `gh api` while the design repo is private, CDN once it is public — or the Tailwind v4 theme from `@b0t-at/design`). No hex codes, no Tailwind default palette, no primitive scales in project code.
 - Fonts: IBM Plex Sans (400/500/600) for UI, IBM Plex Mono for identifiers and code. No other fonts.
 - Icons: Lucide, 16px in controls, stroke 1.75. No emoji in UI.
 - One petrol primary action per view. Success/warning/danger colors only for state.
@@ -19,6 +19,6 @@ Non-negotiables:
 - Light and dark themes both work (`data-theme` + `prefers-color-scheme`). Never hard-code `#fff`/`#000`.
 - WCAG 2.2 AA: labelled inputs, `aria-label` on icon buttons, visible focus, keyboard operable, status never by color alone.
 - Motion 120–320ms ease-out on opacity/transform only; honor `prefers-reduced-motion`.
-- Favicon is `brand/favicon.svg` from the design repo; `<meta name="color-scheme" content="light dark">` is present.
+- Favicon is `brand/favicon.svg` from the design repo (PNG fallbacks and a `site.webmanifest` template are in `brand/png/` and `brand/`); `<meta name="color-scheme" content="light dark">` is present.
 
 Before opening a PR with UI changes, run through the checklist in `docs/for-agents.md` §5 and check the screen in both themes at 360px and 1280px.

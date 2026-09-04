@@ -8,6 +8,8 @@ Tokens, CSS, a Tailwind theme, brand assets and written guidelines that make eve
 
 ## Use it in a project
 
+> The repository is currently **private**, so the jsDelivr CDN URLs will 404 until it is made public. Meanwhile vendor the bundle (`gh api -H "Accept: application/vnd.github.raw" repos/b0t-at/ai-asset-library/contents/css/b0t.css > static/b0t.css`) or install via npm from GitHub — see [`docs/for-agents.md`](docs/for-agents.md).
+
 Plain HTML / server-rendered:
 
 ```html
@@ -37,7 +39,7 @@ Full instructions, rules and the pre-PR checklist: **[`docs/for-agents.md`](docs
 | [`css/`](css) | `tokens.css` (variables, light + dark), `base.css` (reset/type/focus), `components.css` (`b0t-*` components), `utilities.css`, `b0t.css` (everything, one file). |
 | [`tailwind/theme.css`](tailwind/theme.css) | Tailwind v4 `@theme` mapping utilities to the runtime variables. Replaces the default palette. |
 | [`dist/`](dist) | Resolved tokens as JSON and ESM for charts, scripts, emails. |
-| [`brand/`](brand) | Wordmark, mark, app icon, favicon, OG template and [usage rules](brand/README.md). |
+| [`brand/`](brand) | Wordmark, mark, app icon, favicon, OG template, webmanifest, generated PNGs and [usage rules](brand/README.md). |
 | [`docs/`](docs) | [Principles](docs/principles.md) · [Color](docs/color.md) · [Typography](docs/typography.md) · [Layout](docs/layout.md) · [Components](docs/components.md) · [Motion](docs/motion.md) · [Accessibility](docs/accessibility.md) · [Content](docs/content.md) · [Icons & imagery](docs/iconography-imagery.md) · [For agents](docs/for-agents.md) · [Recipes](docs/recipes.md) |
 | [`examples/showcase.html`](examples/showcase.html) | Every component, both themes. Open it in a browser or `npm run preview`. |
 | [`templates/`](templates) | `starter.html` page skeleton, Copilot instructions snippet. |
@@ -45,7 +47,7 @@ Full instructions, rules and the pre-PR checklist: **[`docs/for-agents.md`](docs
 ## Working on the system
 
 ```sh
-npm run build     # regenerate css/tokens.css, css/b0t.css, tailwind/theme.css, dist/* — fails on WCAG contrast violations
+npm run build     # regenerate css/tokens.css, css/b0t.css, tailwind/theme.css, dist/*, brand/png/* — fails on WCAG contrast violations
 npm run check     # CI: build is deterministic and committed output is current
 npm run preview   # http://localhost:4173/examples/showcase.html
 ```

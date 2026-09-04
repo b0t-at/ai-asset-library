@@ -2,7 +2,7 @@
    Requires css/tokens.css + css/base.css. Tailwind/React/Svelte projects usually
    build components from tokens instead and only use this file as a reference. */
 
-@layer b0t.components {
+@layer components {
   /* ------------------------------------------------------------------ */
   /* Button                                                              */
   /* ------------------------------------------------------------------ */
@@ -570,16 +570,24 @@
   .b0t-topbar__inner {
     display: flex;
     align-items: center;
-    gap: var(--b0t-space-6);
+    gap: var(--b0t-space-4);
     min-height: 3.5rem;
+  }
+
+  @media (min-width: 40rem) {
+    .b0t-topbar__inner {
+      gap: var(--b0t-space-6);
+    }
   }
 
   .b0t-topbar__brand {
     display: inline-flex;
     align-items: center;
     gap: var(--b0t-space-2);
+    flex: none;
     color: var(--b0t-color-fg);
     font-weight: var(--b0t-font-weight-semibold);
+    white-space: nowrap;
     text-decoration: none;
   }
 
@@ -588,11 +596,19 @@
     width: auto;
   }
 
+  /* Scrolls horizontally on narrow screens instead of wrapping or overflowing. */
   .b0t-nav {
     display: flex;
     align-items: center;
     gap: var(--b0t-space-1);
     margin-inline-start: auto;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .b0t-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .b0t-nav a {
@@ -602,6 +618,7 @@
     font-size: var(--b0t-font-size-sm);
     font-weight: var(--b0t-font-weight-medium);
     text-decoration: none;
+    white-space: nowrap;
   }
 
   .b0t-nav a:hover {
@@ -733,10 +750,14 @@
     text-decoration: none;
   }
 
-  .b0t-menu__item:hover,
+  .b0t-menu__item:hover {
+    background: var(--b0t-color-surface-hover);
+  }
+
   .b0t-menu__item:focus-visible {
     background: var(--b0t-color-surface-hover);
-    outline: none;
+    outline: 2px solid var(--b0t-color-focus-ring);
+    outline-offset: -2px;
   }
 
   .b0t-menu__item--danger {

@@ -6,25 +6,47 @@ You are building or changing a frontend in a `b0t-at` repository. This page is t
 
 Pick one. Never copy hex codes into your project.
 
-**Plain HTML / server-rendered (Flask, FastAPI, Go templates, static sites)**
+> **Repository visibility.** `ai-asset-library` is currently a **private** repository. The jsDelivr CDN URLs below only work once it is public; until then use the vendored bundle or the npm/git install (both work with your existing GitHub credentials). Check with `curl -sI https://cdn.jsdelivr.net/gh/b0t-at/ai-asset-library@main/css/b0t.css` — 200 means the CDN is live.
+
+**A. Plain HTML / server-rendered (Flask, FastAPI, Go templates, static sites) — vendored bundle**
+
+Copy the single-file bundle and the favicon into your static folder (needs `gh` authenticated to the org):
+
+```sh
+gh api -H "Accept: application/vnd.github.raw" repos/b0t-at/ai-asset-library/contents/css/b0t.css > static/b0t.css
+gh api -H "Accept: application/vnd.github.raw" repos/b0t-at/ai-asset-library/contents/brand/favicon.svg > static/favicon.svg
+```
+
+The first line of `b0t.css` carries the version (`/* b0t.css v0.1.1 … */`) so you can see what you vendored. Re-run to update. Then:
 
 ```html
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="https://cdn.jsdelivr.net/gh/b0t-at/ai-asset-library@main/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/index.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/500.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/600.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-mono@latest/index.css">
+<link rel="stylesheet" href="/static/b0t.css">
+```
+
+Then use the `b0t-*` classes from [`components.md`](components.md). Copy [`templates/starter.html`](../templates/starter.html) as the page skeleton (it references the CDN; swap the two `b0t-at/ai-asset-library` URLs for your vendored paths while the repo is private).
+
+**B. Plain HTML — CDN** (once the repo is public)
+
+```html
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/b0t-at/ai-asset-library@main/brand/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/b0t-at/ai-asset-library@main/css/b0t.css">
 ```
 
-Then use the `b0t-*` classes from [`components.md`](components.md). Copy [`templates/starter.html`](../templates/starter.html) as the page skeleton. Pin `@main` to a tag (`@v0.1.0`) for production.
+Pin `@main` to a tag (`@v0.1.1`) for production.
 
-**Node project (Vite, SvelteKit, Next, Nuxt, Astro, Solid)**
+**C. Node project (Vite, SvelteKit, Next, Nuxt, Astro, Solid)**
 
 ```sh
 npm i github:b0t-at/ai-asset-library @fontsource-variable/ibm-plex-sans @fontsource/ibm-plex-mono
 ```
+
+Pin with `github:b0t-at/ai-asset-library#v0.1.1`. CI needs a token with read access to the org (e.g. `GH_TOKEN` + `git config --global url."https://x-access-token:${GH_TOKEN}@github.com/".insteadOf "https://github.com/"`) as long as the repo is private.
 
 ```css
 /* app.css */
@@ -36,7 +58,7 @@ npm i github:b0t-at/ai-asset-library @fontsource-variable/ibm-plex-sans @fontsou
 /* @import "@b0t-at/design/css/components.css"; */
 ```
 
-**With Tailwind v4** (preferred for framework projects — this is what most b0t repos use):
+**D. With Tailwind v4** (preferred for framework projects — this is what most b0t repos use):
 
 ```css
 @import "tailwindcss";
@@ -47,7 +69,9 @@ npm i github:b0t-at/ai-asset-library @fontsource-variable/ibm-plex-sans @fontsou
 @import "@b0t-at/design/tailwind/theme.css";
 ```
 
-The theme **replaces** Tailwind's palette. `bg-blue-500` no longer exists; `bg-accent`, `text-fg-muted`, `border-border`, `bg-surface`, `rounded-md`, `shadow-md`, `font-mono` do. `max-w-sm … max-w-2xl` map to the b0t containers (640–1280px), `max-w-prose` to 65ch. If a class you want is missing, add a semantic token here — do not reach for arbitrary values like `bg-[#00646d]`.
+The theme **replaces** Tailwind's palette, fonts, radii, shadows, text sizes, breakpoints and containers. `bg-blue-500` no longer exists; `bg-accent`, `text-fg-muted`, `border-border`, `bg-surface`, `rounded-md`, `shadow-md`, `font-mono`, `text-sm … text-5xl` (with b0t line-heights), `leading-snug`, `tracking-tight`, `max-w-lg` (1024px) … `max-w-2xl` (1280px), `max-w-prose` (65ch), `ease-standard` do. `transition-*` utilities default to 120ms / standard easing. If a class you want is missing, add a semantic token here — do not reach for arbitrary values like `bg-[#00646d]`.
+
+`base.css` and `components.css` live in the cascade layers `base` and `components`, the same names Tailwind uses, so Tailwind utilities always win over them. Your own unlayered CSS wins over everything.
 
 **DaisyUI**: do not add it to new projects. Existing projects keep it until migrated; when touching a DaisyUI project, map its theme variables to b0t tokens (`--color-primary: var(--b0t-color-accent)` etc.) rather than introducing a third palette.
 

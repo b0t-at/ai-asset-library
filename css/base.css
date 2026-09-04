@@ -1,6 +1,10 @@
-/* b0t base — reset, document defaults, typography, focus. Requires css/tokens.css. */
+/* b0t base — reset, document defaults, typography, focus. Requires css/tokens.css.
+   Layers use Tailwind's names so that, in a Tailwind v4 project, these rules merge into
+   Tailwind's own layers and utilities keep winning. */
 
-@layer b0t.base {
+@layer base, components, utilities;
+
+@layer base {
   *,
   *::before,
   *::after {

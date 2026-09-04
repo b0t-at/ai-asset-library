@@ -1,6 +1,6 @@
 /* b0t utilities — a deliberately small set of layout primitives. Prefix: b0t-. Requires css/tokens.css. */
 
-@layer b0t.utilities {
+@layer utilities {
   /* Layout */
   .b0t-container {
     width: 100%;
