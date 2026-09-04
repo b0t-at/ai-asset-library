@@ -1,0 +1,7 @@
+{
+  "$description": "Elevation. Hairline borders carry structure; shadows are only for things that float (popovers, dialogs, dragged items). Tinted by color.shadow so they adapt to theme.",
+  "xs": { "$type": "shadow", "$value": "0 1px 2px var(--b0t-color-shadow)", "$description": "Buttons on hover, inputs. Barely there." },
+  "sm": { "$type": "shadow", "$value": "0 1px 2px var(--b0t-color-shadow), 0 2px 6px -2px var(--b0t-color-shadow)", "$description": "Cards that need lift, dropdowns." },
+  "md": { "$type": "shadow", "$value": "0 2px 4px -1px var(--b0t-color-shadow), 0 8px 20px -6px var(--b0t-color-shadow)", "$description": "Popovers, menus, toasts." },
+  "lg": { "$type": "shadow", "$value": "0 8px 24px -8px var(--b0t-color-shadow), 0 24px 56px -16px var(--b0t-color-shadow)", "$description": "Dialogs, command palette." }
+}

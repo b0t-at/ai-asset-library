@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tokens:
+    name: Build tokens and verify generated output
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Contrast gate + generated files are current
+        run: npm run check
+      - name: JSON is valid
+        run: |
+          for f in tokens/*.json dist/tokens.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "invalid JSON: $f"; exit 1; }
+          done
+      - name: SVGs are well-formed
+        run: |
+          for f in brand/*.svg brand/logo/*.svg; do
+            node -e "const s=require('fs').readFileSync('$f','utf8'); if(!/^<svg[\s>]/.test(s.trim())||!/<\/svg>\s*$/.test(s)) process.exit(1)" || { echo "malformed SVG: $f"; exit 1; }
+          done

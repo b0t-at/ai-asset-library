@@ -1,0 +1,42 @@
+{
+  "name": "@b0t-at/design",
+  "version": "0.1.0",
+  "description": "Design foundation for b0t-at: tokens, CSS, Tailwind theme, brand assets and guidelines.",
+  "license": "UNLICENSED",
+  "private": false,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b0t-at/ai-asset-library.git"
+  },
+  "homepage": "https://github.com/b0t-at/ai-asset-library#readme",
+  "files": [
+    "css",
+    "tailwind",
+    "dist",
+    "tokens",
+    "brand",
+    "docs",
+    "templates",
+    "AGENTS.md",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./dist/tokens.mjs",
+    "./tokens": "./dist/tokens.mjs",
+    "./tokens.json": "./dist/tokens.json",
+    "./css/*": "./css/*",
+    "./tailwind/*": "./tailwind/*",
+    "./dist/*": "./dist/*",
+    "./brand/*": "./brand/*",
+    "./tokens/*": "./tokens/*"
+  },
+  "scripts": {
+    "build": "node scripts/build-tokens.mjs",
+    "check": "node scripts/build-tokens.mjs --check",
+    "preview": "node scripts/preview.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

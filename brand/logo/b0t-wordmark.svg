@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 74" width="170" height="74" role="img" aria-label="b0t">
+  <title>b0t wordmark (for light backgrounds)</title>
+  <g fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <!-- b -->
+    <g stroke="#222120">
+      <path d="M17 10V64"/>
+      <circle cx="37" cy="44" r="20"/>
+    </g>
+    <!-- 0 (the mark) -->
+    <g stroke="#00646d">
+      <circle cx="96" cy="44" r="20"/>
+      <circle cx="96" cy="44" r="7" fill="#00646d" stroke="none"/>
+    </g>
+    <!-- t -->
+    <g stroke="#222120">
+      <path d="M139 12V52q0 12 12 12"/>
+      <path d="M127 24h26"/>
+    </g>
+  </g>
+</svg>

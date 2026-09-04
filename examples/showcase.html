@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>b0t design system — showcase</title>
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/500.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/600.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-mono@latest/index.css">
+  <link rel="stylesheet" href="../css/b0t.css">
+  <style>
+    /* Page-local styles for the showcase only. */
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr)); gap: var(--b0t-space-2); }
+    .swatch { display: flex; flex-direction: column; gap: var(--b0t-space-1); font-size: var(--b0t-font-size-xs); }
+    .swatch > i { display: block; aspect-ratio: 5 / 3; border-radius: var(--b0t-radius-md); border: 1px solid var(--b0t-color-border); }
+    .swatch code { font-size: 0.7rem; padding: 0; border: 0; background: none; color: var(--b0t-color-fg-muted); }
+    .scale { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; }
+    .scale > i { display: block; height: 2rem; border-radius: 2px; }
+    .scale > i:first-child { border-radius: var(--b0t-radius-md) 2px 2px var(--b0t-radius-md); }
+    .scale > i:last-child { border-radius: 2px var(--b0t-radius-md) var(--b0t-radius-md) 2px; }
+    .type-row { display: grid; grid-template-columns: 6rem 1fr; gap: var(--b0t-space-4); align-items: baseline; padding-block: var(--b0t-space-3); border-bottom: 1px solid var(--b0t-color-border-subtle); }
+    .type-row:last-child { border: 0; }
+    section { padding-block: var(--b0t-space-10); border-bottom: 1px solid var(--b0t-color-border); }
+    section > h2 { margin-bottom: var(--b0t-space-6); }
+    .logo-tile { display: grid; place-items: center; padding: var(--b0t-space-8); border-radius: var(--b0t-radius-lg); border: 1px solid var(--b0t-color-border); }
+    .logo-tile svg { height: 2.5rem; width: auto; }
+    .logo-tile--dark { background: #110f0d; }
+    .logo-tile--light { background: #f7f7f6; }
+    .logo-tile--accent { background: #00646d; color: #f7f7f6; }
+    .demo-app { display: grid; grid-template-columns: 14rem 1fr; min-height: 22rem; }
+    .demo-app aside { padding: var(--b0t-space-4); border-right: 1px solid var(--b0t-color-border); background: var(--b0t-color-bg-subtle); }
+    .demo-app main { padding: var(--b0t-space-6); }
+    @media (max-width: 40rem) { .demo-app { grid-template-columns: 1fr; } .demo-app aside { border-right: 0; border-bottom: 1px solid var(--b0t-color-border); } }
+  </style>
+</head>
+<body>
+  <a class="b0t-skip-link" href="#main">Skip to content</a>
+
+  <header class="b0t-topbar">
+    <div class="b0t-container b0t-container--xl b0t-topbar__inner">
+      <a class="b0t-topbar__brand" href="#" aria-label="b0t home">
+        <svg viewBox="0 0 170 74" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <g stroke="currentColor"><path d="M17 10V64"/><circle cx="37" cy="44" r="20"/></g>
+          <g stroke="var(--b0t-color-accent)"><circle cx="96" cy="44" r="20"/><path d="M81.86 58.14 110.14 29.86"/></g>
+          <g stroke="currentColor"><path d="M139 12V52q0 12 12 12"/><path d="M127 24h26"/></g>
+        </svg>
+        <span class="b0t-visually-hidden">b0t</span>
+        <span class="b0t-text-muted" style="font-weight: 400">/ design</span>
+      </a>
+      <nav class="b0t-nav" aria-label="Primary">
+        <a href="#color">Color</a>
+        <a href="#type">Type</a>
+        <a href="#components" aria-current="page">Components</a>
+        <a href="#brand">Brand</a>
+      </nav>
+      <button class="b0t-btn b0t-btn--ghost b0t-btn--icon" id="theme" aria-label="Toggle theme" title="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="b0t-container b0t-container--xl">
+
+    <div class="b0t-page-header">
+      <div>
+        <p class="b0t-eyebrow">b0t-at · design foundation v0.1</p>
+        <h1 class="b0t-display" style="margin-top: var(--b0t-space-2)">Quiet tools for loud problems.</h1>
+        <p>Every b0t project should feel like the same well-made instrument: warm paper, petrol accents, hairline structure, honest typography. This page is the living reference — everything here is built from <code>css/b0t.css</code> with no extra styling.</p>
+      </div>
+      <div class="b0t-cluster">
+        <a class="b0t-btn b0t-btn--primary" href="../docs/for-agents.md">Read the rules</a>
+        <a class="b0t-btn" href="https://github.com/b0t-at/ai-asset-library">GitHub</a>
+      </div>
+    </div>
+
+    <!-- COLOR -->
+    <section id="color">
+      <h2>Color</h2>
+      <div class="b0t-stack" style="--b0t-stack-gap: var(--b0t-space-8)">
+        <div>
+          <h3 class="b0t-text-sm b0t-text-muted" style="margin-bottom: var(--b0t-space-3)">Semantic roles (theme-aware)</h3>
+          <div class="swatches">
+            <div class="swatch"><i style="background: var(--b0t-color-bg)"></i>bg<code>--b0t-color-bg</code></div>
+            <div class="swatch"><i style="background: var(--b0t-color-bg-subtle)"></i>bg-subtle</div>
+            <div class="swatch"><i style="background: var(--b0t-color-surface)"></i>surface</div>
+            <div class="swatch"><i style="background: var(--b0t-color-fg)"></i>fg</div>
+            <div class="swatch"><i style="background: var(--b0t-color-fg-muted)"></i>fg-muted</div>
+            <div class="swatch"><i style="background: var(--b0t-color-fg-subtle)"></i>fg-subtle</div>
+            <div class="swatch"><i style="background: var(--b0t-color-border)"></i>border</div>
+            <div class="swatch"><i style="background: var(--b0t-color-border-strong)"></i>border-strong</div>
+            <div class="swatch"><i style="background: var(--b0t-color-accent)"></i>accent</div>
+            <div class="swatch"><i style="background: var(--b0t-color-accent-subtle)"></i>accent-subtle</div>
+            <div class="swatch"><i style="background: var(--b0t-color-success)"></i>success</div>
+            <div class="swatch"><i style="background: var(--b0t-color-warning)"></i>warning</div>
+            <div class="swatch"><i style="background: var(--b0t-color-danger)"></i>danger</div>
+            <div class="swatch"><i style="background: var(--b0t-color-focus-ring)"></i>focus-ring</div>
+            <div class="swatch"><i style="background: var(--b0t-color-selection)"></i>selection</div>
+          </div>
+        </div>
+        <div class="b0t-stack" style="--b0t-stack-gap: var(--b0t-space-3)">
+          <h3 class="b0t-text-sm b0t-text-muted">Primitive scales (reference only — never used directly)</h3>
+          <div class="scale" aria-label="ink"><i style="background:var(--b0t-color-ink-0)"></i><i style="background:var(--b0t-color-ink-50)"></i><i style="background:var(--b0t-color-ink-100)"></i><i style="background:var(--b0t-color-ink-200)"></i><i style="background:var(--b0t-color-ink-300)"></i><i style="background:var(--b0t-color-ink-400)"></i><i style="background:var(--b0t-color-ink-500)"></i><i style="background:var(--b0t-color-ink-600)"></i><i style="background:var(--b0t-color-ink-700)"></i><i style="background:var(--b0t-color-ink-800)"></i><i style="background:var(--b0t-color-ink-900)"></i><i style="background:var(--b0t-color-ink-1000)"></i></div>
+          <div class="scale" aria-label="petrol"><i style="background:var(--b0t-color-petrol-50)"></i><i style="background:var(--b0t-color-petrol-100)"></i><i style="background:var(--b0t-color-petrol-200)"></i><i style="background:var(--b0t-color-petrol-300)"></i><i style="background:var(--b0t-color-petrol-400)"></i><i style="background:var(--b0t-color-petrol-500)"></i><i style="background:var(--b0t-color-petrol-600)"></i><i style="background:var(--b0t-color-petrol-700)"></i><i style="background:var(--b0t-color-petrol-800)"></i><i style="background:var(--b0t-color-petrol-900)"></i><i style="background:var(--b0t-color-petrol-950)"></i><i></i></div>
+          <div class="scale" aria-label="moss"><i style="background:var(--b0t-color-moss-50)"></i><i style="background:var(--b0t-color-moss-100)"></i><i style="background:var(--b0t-color-moss-200)"></i><i style="background:var(--b0t-color-moss-300)"></i><i style="background:var(--b0t-color-moss-400)"></i><i style="background:var(--b0t-color-moss-500)"></i><i style="background:var(--b0t-color-moss-600)"></i><i style="background:var(--b0t-color-moss-700)"></i><i style="background:var(--b0t-color-moss-800)"></i><i style="background:var(--b0t-color-moss-900)"></i><i style="background:var(--b0t-color-moss-950)"></i><i></i></div>
+          <div class="scale" aria-label="amber"><i style="background:var(--b0t-color-amber-50)"></i><i style="background:var(--b0t-color-amber-100)"></i><i style="background:var(--b0t-color-amber-200)"></i><i style="background:var(--b0t-color-amber-300)"></i><i style="background:var(--b0t-color-amber-400)"></i><i style="background:var(--b0t-color-amber-500)"></i><i style="background:var(--b0t-color-amber-600)"></i><i style="background:var(--b0t-color-amber-700)"></i><i style="background:var(--b0t-color-amber-800)"></i><i style="background:var(--b0t-color-amber-900)"></i><i style="background:var(--b0t-color-amber-950)"></i><i></i></div>
+          <div class="scale" aria-label="rust"><i style="background:var(--b0t-color-rust-50)"></i><i style="background:var(--b0t-color-rust-100)"></i><i style="background:var(--b0t-color-rust-200)"></i><i style="background:var(--b0t-color-rust-300)"></i><i style="background:var(--b0t-color-rust-400)"></i><i style="background:var(--b0t-color-rust-500)"></i><i style="background:var(--b0t-color-rust-600)"></i><i style="background:var(--b0t-color-rust-700)"></i><i style="background:var(--b0t-color-rust-800)"></i><i style="background:var(--b0t-color-rust-900)"></i><i style="background:var(--b0t-color-rust-950)"></i><i></i></div>
+          <div class="scale" aria-label="plum"><i style="background:var(--b0t-color-plum-50)"></i><i style="background:var(--b0t-color-plum-100)"></i><i style="background:var(--b0t-color-plum-200)"></i><i style="background:var(--b0t-color-plum-300)"></i><i style="background:var(--b0t-color-plum-400)"></i><i style="background:var(--b0t-color-plum-500)"></i><i style="background:var(--b0t-color-plum-600)"></i><i style="background:var(--b0t-color-plum-700)"></i><i style="background:var(--b0t-color-plum-800)"></i><i style="background:var(--b0t-color-plum-900)"></i><i style="background:var(--b0t-color-plum-950)"></i><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPE -->
+    <section id="type">
+      <h2>Typography</h2>
+      <div class="type-row"><code>5xl / display</code><div style="font-size: var(--b0t-font-size-5xl); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">Winget, tamed.</div></div>
+      <div class="type-row"><code>3xl / h1</code><h1>Package updates for 1,284 manifests</h1></div>
+      <div class="type-row"><code>2xl / h2</code><h2 style="margin:0">Open pull requests</h2></div>
+      <div class="type-row"><code>xl / h3</code><h3>Validation pipeline</h3></div>
+      <div class="type-row"><code>md / body</code><p>Body text sits at 16px with 1.5 line-height. Paragraphs are limited to 65 characters per line in prose contexts, which is where <a href="#">links look like this</a>. Numbers like 4,096 and 0.25 use tabular figures in tables.</p></div>
+      <div class="type-row"><code>sm / ui</code><p class="b0t-text-sm">Dense interface text — labels, table cells, secondary descriptions. Still 14px, never smaller for content.</p></div>
+      <div class="type-row"><code>xs / meta</code><p class="b0t-text-xs b0t-text-muted">Updated 3 minutes ago · 12 KB · SHA <span class="b0t-mono">e053d6e</span></p></div>
+      <div class="type-row"><code>mono</code><pre><code>$ komac update --identifier Microsoft.PowerToys --version 0.84.1
+✓ manifest validated · 3 installers · sha256 ok</code></pre></div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section id="components">
+      <h2>Components</h2>
+      <div class="b0t-stack" style="--b0t-stack-gap: var(--b0t-space-10)">
+
+        <div class="b0t-stack">
+          <h3>Buttons</h3>
+          <div class="b0t-cluster" style="--b0t-cluster-gap: var(--b0t-space-3)">
+            <button class="b0t-btn b0t-btn--primary">Create manifest</button>
+            <button class="b0t-btn">Secondary</button>
+            <button class="b0t-btn b0t-btn--ghost">Ghost</button>
+            <button class="b0t-btn b0t-btn--danger">Delete</button>
+            <button class="b0t-btn" disabled>Disabled</button>
+            <button class="b0t-btn b0t-btn--primary b0t-btn--sm">Small</button>
+            <button class="b0t-btn b0t-btn--lg">Large</button>
+            <button class="b0t-btn b0t-btn--icon" aria-label="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></button>
+            <button class="b0t-btn b0t-btn--primary"><span class="b0t-spinner" aria-hidden="true"></span>Publishing…</button>
+          </div>
+        </div>
+
+        <div class="b0t-stack">
+          <h3>Forms</h3>
+          <div class="b0t-card" style="max-width: 40rem">
+            <form class="b0t-stack" style="--b0t-stack-gap: var(--b0t-space-5)" onsubmit="return false">
+              <div class="b0t-form-row">
+                <div class="b0t-field">
+                  <label class="b0t-label" for="pkg" data-required>Package identifier</label>
+                  <input class="b0t-input b0t-input--mono" id="pkg" placeholder="Publisher.Package" value="Microsoft.PowerToys">
+                  <p class="b0t-hint">Must match the winget-pkgs manifest path.</p>
+                </div>
+                <div class="b0t-field">
+                  <label class="b0t-label" for="ver">Version</label>
+                  <input class="b0t-input b0t-input--mono" id="ver" value="0.84" aria-invalid="true" aria-describedby="ver-err">
+                  <p class="b0t-error" id="ver-err">Version needs at least three segments (e.g. 0.84.1).</p>
+                </div>
+              </div>
+              <div class="b0t-field">
+                <label class="b0t-label" for="arch">Architecture</label>
+                <select class="b0t-select" id="arch"><option>x64</option><option>arm64</option><option>x86</option></select>
+              </div>
+              <div class="b0t-field">
+                <label class="b0t-label" for="notes">Release notes</label>
+                <textarea class="b0t-textarea" id="notes" placeholder="Optional. Markdown is fine."></textarea>
+              </div>
+              <div class="b0t-cluster" style="--b0t-cluster-gap: var(--b0t-space-6)">
+                <label class="b0t-check"><input type="checkbox" checked> Open pull request automatically</label>
+                <label class="b0t-switch"><input type="checkbox" role="switch" checked> Validate installers</label>
+              </div>
+              <div class="b0t-cluster b0t-cluster--between">
+                <span class="b0t-text-xs b0t-text-muted">Press <kbd>⌘</kbd> <kbd>↵</kbd> to submit</span>
+                <span class="b0t-cluster"><button class="b0t-btn b0t-btn--ghost" type="button">Cancel</button><button class="b0t-btn b0t-btn--primary" type="submit">Submit</button></span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="b0t-stack">
+          <h3>Badges &amp; alerts</h3>
+          <div class="b0t-cluster">
+            <span class="b0t-badge">Default</span>
+            <span class="b0t-badge b0t-badge--accent">v1.4.0</span>
+            <span class="b0t-badge b0t-badge--success b0t-badge--dot">Merged</span>
+            <span class="b0t-badge b0t-badge--warning b0t-badge--dot">Pending review</span>
+            <span class="b0t-badge b0t-badge--danger b0t-badge--dot">Failed</span>
+          </div>
+          <div class="b0t-grid" style="--b0t-grid-min: 18rem">
+            <div class="b0t-alert" role="status">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              <div><div class="b0t-alert__title">Scheduled maintenance</div>Runners restart Sunday 03:00 CET. Queued jobs resume automatically.</div>
+            </div>
+            <div class="b0t-alert b0t-alert--success" role="status">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <div><div class="b0t-alert__title">Manifest published</div>PR #48213 was merged into winget-pkgs.</div>
+            </div>
+            <div class="b0t-alert b0t-alert--warning" role="status">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.7 18-8-14a2 2 0 0 0-3.4 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3ZM12 9v4M12 17h.01"/></svg>
+              <div><div class="b0t-alert__title">Installer hash changed</div>The vendor re-uploaded the binary. Re-verify before merging.</div>
+            </div>
+            <div class="b0t-alert b0t-alert--danger" role="alert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+              <div><div class="b0t-alert__title">Pipeline failed</div>Step <code>validate-manifest</code> exited with code 1. <a href="#">View log</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="b0t-stack">
+          <h3>Table</h3>
+          <div class="b0t-table-wrap">
+            <table class="b0t-table">
+              <thead><tr><th>Package</th><th>Version</th><th>Status</th><th class="is-numeric">Installers</th><th>Updated</th><th></th></tr></thead>
+              <tbody>
+                <tr><td class="b0t-mono">Microsoft.PowerToys</td><td class="b0t-mono">0.84.1</td><td><span class="b0t-badge b0t-badge--success b0t-badge--dot">Merged</span></td><td class="is-numeric">3</td><td class="b0t-text-muted">2 min ago</td><td><button class="b0t-btn b0t-btn--ghost b0t-btn--sm">Open</button></td></tr>
+                <tr><td class="b0t-mono">Mozilla.Firefox</td><td class="b0t-mono">130.0.1</td><td><span class="b0t-badge b0t-badge--warning b0t-badge--dot">Pending</span></td><td class="is-numeric">6</td><td class="b0t-text-muted">14 min ago</td><td><button class="b0t-btn b0t-btn--ghost b0t-btn--sm">Open</button></td></tr>
+                <tr><td class="b0t-mono">Docker.DockerDesktop</td><td class="b0t-mono">4.34.0</td><td><span class="b0t-badge b0t-badge--danger b0t-badge--dot">Failed</span></td><td class="is-numeric">1</td><td class="b0t-text-muted">1 h ago</td><td><button class="b0t-btn b0t-btn--ghost b0t-btn--sm">Open</button></td></tr>
+                <tr><td class="b0t-mono">JetBrains.Toolbox</td><td class="b0t-mono">2.4.2</td><td><span class="b0t-badge">Queued</span></td><td class="is-numeric">2</td><td class="b0t-text-muted">3 h ago</td><td><button class="b0t-btn b0t-btn--ghost b0t-btn--sm">Open</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="b0t-stack">
+          <h3>App shell</h3>
+          <div class="b0t-card b0t-card--flush demo-app">
+            <aside>
+              <p class="b0t-eyebrow" style="padding: 0 var(--b0t-space-3) var(--b0t-space-2)">Workspace</p>
+              <nav class="b0t-sidenav" aria-label="Sections">
+                <a href="#" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Overview</a>
+                <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v12M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 9a9 9 0 0 1-9 9"/></svg>Pull requests</a>
+                <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM4 9h16M9 20V9"/></svg>Manifests</a>
+                <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Settings</a>
+              </nav>
+            </aside>
+            <main>
+              <ol class="b0t-breadcrumb" style="margin-bottom: var(--b0t-space-4)"><li><a href="#">winget-pkgs-updates</a></li><li><a href="#">Runs</a></li><li aria-current="page">#4127</li></ol>
+              <div class="b0t-tabs" role="tablist" style="margin-bottom: var(--b0t-space-6)">
+                <button class="b0t-tab" role="tab" aria-selected="true">Summary</button>
+                <button class="b0t-tab" role="tab">Jobs <span class="b0t-badge" style="margin-left: 4px">12</span></button>
+                <button class="b0t-tab" role="tab">Artifacts</button>
+                <button class="b0t-tab" role="tab">Logs</button>
+              </div>
+              <div class="b0t-grid" style="--b0t-grid-min: 9rem; margin-bottom: var(--b0t-space-6)">
+                <div class="b0t-stat"><span class="b0t-stat__label">Checked</span><span class="b0t-stat__value">1,284</span></div>
+                <div class="b0t-stat"><span class="b0t-stat__label">Updated</span><span class="b0t-stat__value b0t-text-accent">37</span></div>
+                <div class="b0t-stat"><span class="b0t-stat__label">Failed</span><span class="b0t-stat__value b0t-text-danger">2</span></div>
+                <div class="b0t-stat"><span class="b0t-stat__label">Duration</span><span class="b0t-stat__value">14m 02s</span></div>
+              </div>
+              <div class="b0t-stack" style="--b0t-stack-gap: var(--b0t-space-2)">
+                <div class="b0t-cluster b0t-cluster--between b0t-text-sm"><span>Publishing manifests</span><span class="b0t-text-muted b0t-tabular">37 / 39</span></div>
+                <div class="b0t-progress" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"><span style="--value: 95%"></span></div>
+              </div>
+            </main>
+          </div>
+        </div>
+
+        <div class="b0t-grid" style="--b0t-grid-min: 16rem">
+          <div class="b0t-stack">
+            <h3>Card</h3>
+            <a class="b0t-card b0t-card--interactive" href="#">
+              <div class="b0t-card__header">
+                <div><div class="b0t-card__title">winget-pkgs-updates</div><div class="b0t-card__desc">Keeps software in winget up to date. Runs every 6 hours.</div></div>
+                <span class="b0t-badge b0t-badge--success b0t-badge--dot">Healthy</span>
+              </div>
+              <div class="b0t-cluster b0t-text-xs b0t-text-muted"><span class="b0t-mono">PowerShell</span><span>·</span><span>Updated today</span></div>
+            </a>
+          </div>
+          <div class="b0t-stack">
+            <h3>Empty state</h3>
+            <div class="b0t-empty">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg>
+              <div class="b0t-empty__title">No manifests yet</div>
+              <p>Add a package identifier and b0t will track new releases for you.</p>
+              <button class="b0t-btn b0t-btn--primary b0t-btn--sm">Add package</button>
+            </div>
+          </div>
+          <div class="b0t-stack">
+            <h3>Menu &amp; dialog</h3>
+            <div class="b0t-cluster">
+              <button class="b0t-btn" popovertarget="menu">Actions ▾</button>
+              <div class="b0t-menu" id="menu" popover>
+                <button class="b0t-menu__item">Re-run pipeline</button>
+                <button class="b0t-menu__item">Copy manifest path</button>
+                <div class="b0t-menu__sep"></div>
+                <button class="b0t-menu__item b0t-menu__item--danger">Close pull request</button>
+              </div>
+              <button class="b0t-btn" onclick="document.getElementById('dlg').showModal()">Open dialog</button>
+              <dialog class="b0t-dialog" id="dlg">
+                <form method="dialog">
+                  <div class="b0t-dialog__body">
+                    <h2 class="b0t-dialog__title">Close 3 pull requests?</h2>
+                    <p class="b0t-text-sm b0t-text-muted">They will be closed on winget-pkgs without merging. You can reopen them later.</p>
+                  </div>
+                  <div class="b0t-dialog__footer">
+                    <button class="b0t-btn b0t-btn--ghost" value="cancel">Cancel</button>
+                    <button class="b0t-btn b0t-btn--danger" value="ok">Close pull requests</button>
+                  </div>
+                </form>
+              </dialog>
+            </div>
+            <div class="b0t-toast" role="status" style="animation: none"><span class="b0t-avatar">KD</span><div><strong>Klaus</strong> approved <span class="b0t-mono">#48213</span><div class="b0t-text-xs b0t-text-muted">Just now</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND -->
+    <section id="brand" style="border-bottom: 0">
+      <h2>Brand</h2>
+      <p class="b0t-text-muted" style="max-width: 60ch; margin-bottom: var(--b0t-space-6)">The wordmark is built from three monoline glyphs. The slashed zero is the mark: a nod to terminals and to "zero ambiguity" — it works alone as favicon and app icon.</p>
+      <div class="b0t-grid" style="--b0t-grid-min: 14rem">
+        <div class="logo-tile logo-tile--light"><img src="../brand/logo/b0t-wordmark.svg" alt="b0t wordmark on light"></div>
+        <div class="logo-tile logo-tile--dark"><img src="../brand/logo/b0t-wordmark-dark.svg" alt="b0t wordmark on dark"></div>
+        <div class="logo-tile logo-tile--accent"><img src="../brand/logo/b0t-wordmark-mono.svg" alt="b0t wordmark monochrome" style="filter: invert(1) brightness(2)"></div>
+        <div class="logo-tile"><img src="../brand/logo/b0t-mark.svg" alt="b0t mark" style="height: 3rem"></div>
+        <div class="logo-tile"><img src="../brand/logo/b0t-app-icon.svg" alt="b0t app icon" style="height: 4rem; border-radius: 14px"></div>
+        <div class="logo-tile"><img src="../brand/favicon.svg" alt="b0t favicon" style="height: 1rem"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="b0t-footer">
+    <div class="b0t-container b0t-container--xl b0t-cluster b0t-cluster--between">
+      <span>© b0t-at · <a href="https://b0t.at">b0t.at</a></span>
+      <span>Design foundation · <a href="https://github.com/b0t-at/ai-asset-library">source</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const stored = new URLSearchParams(location.search).get("theme") || localStorage.getItem("b0t-theme");
+    if (stored) root.dataset.theme = stored;
+    document.getElementById("theme").addEventListener("click", () => {
+      const dark = root.dataset.theme === "dark" || (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+      root.dataset.theme = dark ? "light" : "dark";
+      localStorage.setItem("b0t-theme", root.dataset.theme);
+    });
+  </script>
+</body>
+</html>

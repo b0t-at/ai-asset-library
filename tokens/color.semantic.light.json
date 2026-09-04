@@ -1,0 +1,64 @@
+{
+  "$description": "Semantic color roles — LIGHT theme. Product UI must use these, never primitives. Every key here must exist in color.semantic.dark.json. Syntax: {color.scale.step} optionally followed by ' / alpha'.",
+
+  "bg": { "$type": "color", "$value": "{color.ink.50}", "$description": "Page background. Warm paper, not pure white." },
+  "bg-subtle": { "$type": "color", "$value": "{color.ink.100}", "$description": "Secondary areas: sidebars, table headers, striped rows." },
+  "bg-inset": { "$type": "color", "$value": "{color.ink.100}", "$description": "Sunken areas: code blocks, wells, disabled fields." },
+  "bg-overlay": { "$type": "color", "$value": "{color.ink.1000} / 0.48", "$description": "Scrim behind dialogs." },
+  "surface": { "$type": "color", "$value": "{color.ink.0}", "$description": "Raised content: cards, popovers, inputs, dialogs." },
+  "surface-hover": { "$type": "color", "$value": "{color.ink.100}", "$description": "Hover state for interactive surfaces (menu items, rows)." },
+
+  "fg": { "$type": "color", "$value": "{color.ink.950}", "$description": "Primary text and icons." },
+  "fg-muted": { "$type": "color", "$value": "{color.ink.700}", "$description": "Secondary text: descriptions, metadata, labels." },
+  "fg-subtle": { "$type": "color", "$value": "{color.ink.500}", "$description": "Placeholders, decorative icons. Never for essential text." },
+  "fg-disabled": { "$type": "color", "$value": "{color.ink.400}" },
+  "fg-on-accent": { "$type": "color", "$value": "{color.ink.0}", "$description": "Text on solid accent fills." },
+  "fg-on-success": { "$type": "color", "$value": "{color.ink.0}" },
+  "fg-on-warning": { "$type": "color", "$value": "{color.ink.950}" },
+  "fg-on-danger": { "$type": "color", "$value": "{color.ink.0}" },
+
+  "border": { "$type": "color", "$value": "{color.ink.200}", "$description": "Default hairline. Prefer borders over shadows." },
+  "border-subtle": { "$type": "color", "$value": "{color.ink.100}", "$description": "Dividers inside a surface." },
+  "border-strong": { "$type": "color", "$value": "{color.ink.500}", "$description": "Input borders, emphasized outlines (meets 3:1)." },
+  "focus-ring": { "$type": "color", "$value": "{color.petrol.600}", "$description": "Keyboard focus. Always visible, 2px, offset 2px." },
+  "selection": { "$type": "color", "$value": "{color.petrol.200}", "$description": "Text selection background." },
+
+  "accent": { "$type": "color", "$value": "{color.petrol.700}", "$description": "Solid fills: primary buttons, active states, progress." },
+  "accent-hover": { "$type": "color", "$value": "{color.petrol.800}" },
+  "accent-active": { "$type": "color", "$value": "{color.petrol.900}" },
+  "accent-fg": { "$type": "color", "$value": "{color.petrol.700}", "$description": "Accent-colored text and icons on bg/surface." },
+  "accent-subtle": { "$type": "color", "$value": "{color.petrol.100}", "$description": "Tinted background: selected rows, info callouts, badges." },
+  "accent-subtle-fg": { "$type": "color", "$value": "{color.petrol.800}", "$description": "Text on accent-subtle." },
+  "accent-border": { "$type": "color", "$value": "{color.petrol.300}" },
+
+  "link": { "$type": "color", "$value": "{color.petrol.700}" },
+  "link-hover": { "$type": "color", "$value": "{color.petrol.900}" },
+
+  "success": { "$type": "color", "$value": "{color.moss.700}" },
+  "success-fg": { "$type": "color", "$value": "{color.moss.700}" },
+  "success-subtle": { "$type": "color", "$value": "{color.moss.100}" },
+  "success-subtle-fg": { "$type": "color", "$value": "{color.moss.800}" },
+  "success-border": { "$type": "color", "$value": "{color.moss.300}" },
+
+  "warning": { "$type": "color", "$value": "{color.amber.400}" },
+  "warning-fg": { "$type": "color", "$value": "{color.amber.800}" },
+  "warning-subtle": { "$type": "color", "$value": "{color.amber.100}" },
+  "warning-subtle-fg": { "$type": "color", "$value": "{color.amber.900}" },
+  "warning-border": { "$type": "color", "$value": "{color.amber.400}" },
+
+  "danger": { "$type": "color", "$value": "{color.rust.700}" },
+  "danger-hover": { "$type": "color", "$value": "{color.rust.800}" },
+  "danger-fg": { "$type": "color", "$value": "{color.rust.700}" },
+  "danger-subtle": { "$type": "color", "$value": "{color.rust.100}" },
+  "danger-subtle-fg": { "$type": "color", "$value": "{color.rust.800}" },
+  "danger-border": { "$type": "color", "$value": "{color.rust.300}" },
+
+  "shadow": { "$type": "color", "$value": "{color.ink.1000} / 0.10", "$description": "Shadow tint. Used by the shadow tokens." },
+
+  "chart-1": { "$type": "color", "$value": "{color.petrol.600}" },
+  "chart-2": { "$type": "color", "$value": "{color.amber.500}" },
+  "chart-3": { "$type": "color", "$value": "{color.plum.600}" },
+  "chart-4": { "$type": "color", "$value": "{color.moss.600}" },
+  "chart-5": { "$type": "color", "$value": "{color.rust.600}" },
+  "chart-6": { "$type": "color", "$value": "{color.ink.500}" }
+}

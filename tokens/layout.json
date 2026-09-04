@@ -1,0 +1,25 @@
+{
+  "$description": "Layout: content widths, breakpoints, page gutter, z-index scale.",
+  "container": {
+    "sm": { "$type": "dimension", "$value": "40rem", "$description": "640px — auth forms, single-purpose tools." },
+    "md": { "$type": "dimension", "$value": "48rem", "$description": "768px — settings, documentation." },
+    "lg": { "$type": "dimension", "$value": "64rem", "$description": "1024px — default app content." },
+    "xl": { "$type": "dimension", "$value": "72rem", "$description": "1152px — dashboards, tables." },
+    "2xl": { "$type": "dimension", "$value": "80rem", "$description": "1280px — full-width data views. Hard ceiling." },
+    "prose": { "$type": "dimension", "$value": "65ch", "$description": "Measure for long-form text." }
+  },
+  "gutter": { "$type": "dimension", "$value": "clamp(1rem, 4vw, 2rem)", "$description": "Horizontal page padding." },
+  "breakpoint": {
+    "sm": { "$type": "dimension", "$value": "40rem" },
+    "md": { "$type": "dimension", "$value": "48rem" },
+    "lg": { "$type": "dimension", "$value": "64rem" },
+    "xl": { "$type": "dimension", "$value": "80rem" }
+  },
+  "z": {
+    "dropdown": { "$type": "number", "$value": "100" },
+    "sticky": { "$type": "number", "$value": "200" },
+    "overlay": { "$type": "number", "$value": "300" },
+    "modal": { "$type": "number", "$value": "400" },
+    "toast": { "$type": "number", "$value": "500" }
+  }
+}

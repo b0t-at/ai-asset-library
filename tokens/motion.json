@@ -1,0 +1,15 @@
+{
+  "$description": "Motion. Quick and quiet. Motion communicates state change; it is never decoration. Always honor prefers-reduced-motion.",
+  "duration": {
+    "fast": { "$type": "duration", "$value": "120ms", "$description": "Hover, focus, color changes, toggles." },
+    "base": { "$type": "duration", "$value": "200ms", "$description": "Menus, popovers, tab indicators, expand/collapse." },
+    "slow": { "$type": "duration", "$value": "320ms", "$description": "Dialogs, drawers, page-level transitions." },
+    "deliberate": { "$type": "duration", "$value": "500ms", "$description": "Progress completion, success confirmation. Rare." }
+  },
+  "easing": {
+    "standard": { "$type": "cubicBezier", "$value": "cubic-bezier(0.2, 0, 0, 1)", "$description": "Default. Fast start, soft landing." },
+    "enter": { "$type": "cubicBezier", "$value": "cubic-bezier(0, 0, 0.2, 1)", "$description": "Elements appearing." },
+    "exit": { "$type": "cubicBezier", "$value": "cubic-bezier(0.4, 0, 1, 1)", "$description": "Elements leaving. Shorter than enter." },
+    "linear": { "$type": "cubicBezier", "$value": "linear", "$description": "Spinners, progress bars." }
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f7f6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#110f0d" media="(prefers-color-scheme: dark)">
+  <title>Page title · Project name</title>
+  <meta name="description" content="One sentence: what this tool does.">
+
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/b0t-at/ai-asset-library@main/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/500.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/600.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/ibm-plex-mono@latest/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/b0t-at/ai-asset-library@main/css/b0t.css">
+
+  <!-- Apply a stored theme before first paint. -->
+  <script>var t=localStorage.getItem("b0t-theme");if(t)document.documentElement.dataset.theme=t;</script>
+</head>
+<body>
+  <a class="b0t-skip-link" href="#main">Skip to content</a>
+
+  <header class="b0t-topbar">
+    <div class="b0t-container b0t-topbar__inner">
+      <a class="b0t-topbar__brand" href="/" aria-label="Project name — home">
+        <svg viewBox="0 0 170 74" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <g stroke="currentColor"><path d="M17 10V64"/><circle cx="37" cy="44" r="20"/></g>
+          <g stroke="var(--b0t-color-accent)"><circle cx="96" cy="44" r="20"/><circle cx="96" cy="44" r="7" fill="var(--b0t-color-accent)" stroke="none"/></g>
+          <g stroke="currentColor"><path d="M139 12V52q0 12 12 12"/><path d="M127 24h26"/></g>
+        </svg>
+        <span class="b0t-text-muted" style="font-weight: 400">/ project name</span>
+      </a>
+      <nav class="b0t-nav" aria-label="Primary">
+        <a href="/" aria-current="page">Overview</a>
+        <a href="/items">Items</a>
+        <a href="/settings">Settings</a>
+      </nav>
+      <button class="b0t-btn b0t-btn--ghost b0t-btn--icon" id="theme-toggle" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="b0t-container">
+    <div class="b0t-page-header">
+      <div>
+        <h1>Page title</h1>
+        <p>One sentence describing what this page lets the user do.</p>
+      </div>
+      <button class="b0t-btn b0t-btn--primary">Primary action</button>
+    </div>
+
+    <div class="b0t-grid">
+      <div class="b0t-card">
+        <div class="b0t-card__header">
+          <div>
+            <div class="b0t-card__title">Card title</div>
+            <div class="b0t-card__desc">Short description of what this card shows.</div>
+          </div>
+          <span class="b0t-badge b0t-badge--success b0t-badge--dot">Healthy</span>
+        </div>
+        <p class="b0t-text-sm">Card content.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="b0t-footer">
+    <div class="b0t-container b0t-cluster b0t-cluster--between">
+      <span>© b0t-at · <a href="https://b0t.at">b0t.at</a></span>
+      <a href="https://github.com/b0t-at">Source</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      var root = document.documentElement;
+      var dark = root.dataset.theme === "dark" || (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+      root.dataset.theme = dark ? "light" : "dark";
+      localStorage.setItem("b0t-theme", root.dataset.theme);
+    });
+  </script>
+</body>
+</html>

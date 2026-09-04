@@ -1,0 +1,11 @@
+{
+  "$description": "Corner radius. Deliberately restrained — b0t UI is crisp, not pillowy. Default for controls is md; cards use lg; only avatars/pills are full.",
+  "none": { "$type": "dimension", "$value": "0" },
+  "xs": { "$type": "dimension", "$value": "2px", "$description": "Checkboxes, tiny chips, inline code." },
+  "sm": { "$type": "dimension", "$value": "4px", "$description": "Badges, kbd." },
+  "md": { "$type": "dimension", "$value": "6px", "$description": "Buttons, inputs, menu items. The default." },
+  "lg": { "$type": "dimension", "$value": "8px", "$description": "Cards, popovers, code blocks." },
+  "xl": { "$type": "dimension", "$value": "12px", "$description": "Dialogs, large media." },
+  "2xl": { "$type": "dimension", "$value": "16px", "$description": "Hero imagery only." },
+  "full": { "$type": "dimension", "$value": "9999px", "$description": "Avatars, pills, toggles." }
+}

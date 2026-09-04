@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="b0t — project social preview">
+  <title>b0t social preview template (1200×630). Replace the TITLE, DESCRIPTION and REPO texts.</title>
+  <rect width="1200" height="630" fill="#110f0d"/>
+
+  <!-- wordmark, top left -->
+  <g transform="translate(80 72) scale(0.46)" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#f7f7f6">
+      <path d="M17 10V64"/>
+      <circle cx="37" cy="44" r="20"/>
+    </g>
+    <g stroke="#4cb8c4">
+      <circle cx="96" cy="44" r="20"/>
+      <circle cx="96" cy="44" r="7" fill="#4cb8c4" stroke="none"/>
+    </g>
+    <g stroke="#f7f7f6">
+      <path d="M139 12V52q0 12 12 12"/>
+      <path d="M127 24h26"/>
+    </g>
+  </g>
+
+  <!-- repo path, top right -->
+  <text x="1120" y="102" text-anchor="end" font-family="'IBM Plex Mono', ui-monospace, Consolas, monospace" font-size="22" fill="#a8a6a2">b0t-at / REPO</text>
+
+  <!-- title -->
+  <text x="80" y="330" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="72" font-weight="600" letter-spacing="-1.5" fill="#f7f7f6">TITLE</text>
+
+  <!-- description -->
+  <text x="80" y="392" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="30" fill="#a8a6a2">DESCRIPTION — one sentence, what it does, plainly.</text>
+
+  <!-- rule -->
+  <rect x="80" y="536" width="1040" height="1" fill="#323130"/>
+  <rect x="80" y="536" width="96" height="2" fill="#4cb8c4"/>
+
+  <text x="80" y="576" font-family="'IBM Plex Mono', ui-monospace, Consolas, monospace" font-size="20" fill="#706e6b">github.com/b0t-at</text>
+</svg>

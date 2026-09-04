@@ -1,0 +1,36 @@
+{
+  "$description": "Typography. IBM Plex Sans for UI/body, IBM Plex Mono for code and data. Sizes are rem; display sizes are fluid.",
+  "family": {
+    "sans": { "$type": "fontFamily", "$value": "'IBM Plex Sans Variable', 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" },
+    "mono": { "$type": "fontFamily", "$value": "'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'JetBrains Mono', Menlo, Consolas, monospace" }
+  },
+  "size": {
+    "xs": { "$type": "dimension", "$value": "0.75rem", "$description": "12px — badges, table meta. Never below this." },
+    "sm": { "$type": "dimension", "$value": "0.875rem", "$description": "14px — dense UI, secondary text." },
+    "md": { "$type": "dimension", "$value": "1rem", "$description": "16px — body default." },
+    "lg": { "$type": "dimension", "$value": "1.125rem", "$description": "18px — lead paragraphs, h4." },
+    "xl": { "$type": "dimension", "$value": "1.25rem", "$description": "20px — h3." },
+    "2xl": { "$type": "dimension", "$value": "1.5rem", "$description": "24px — h2." },
+    "3xl": { "$type": "dimension", "$value": "clamp(1.75rem, 1.45rem + 1.2vw, 2.25rem)", "$description": "28–36px — h1." },
+    "4xl": { "$type": "dimension", "$value": "clamp(2.125rem, 1.6rem + 2vw, 3rem)", "$description": "34–48px — page hero." },
+    "5xl": { "$type": "dimension", "$value": "clamp(2.5rem, 1.7rem + 3vw, 3.75rem)", "$description": "40–60px — marketing only." }
+  },
+  "weight": {
+    "regular": { "$type": "fontWeight", "$value": "400" },
+    "medium": { "$type": "fontWeight", "$value": "500" },
+    "semibold": { "$type": "fontWeight", "$value": "600" },
+    "bold": { "$type": "fontWeight", "$value": "700", "$description": "Rare. Headings use semibold." }
+  },
+  "leading": {
+    "none": { "$type": "number", "$value": "1" },
+    "tight": { "$type": "number", "$value": "1.15", "$description": "Display headings." },
+    "snug": { "$type": "number", "$value": "1.3", "$description": "Headings, buttons, labels." },
+    "normal": { "$type": "number", "$value": "1.5", "$description": "UI body." },
+    "relaxed": { "$type": "number", "$value": "1.65", "$description": "Long-form prose." }
+  },
+  "tracking": {
+    "tight": { "$type": "dimension", "$value": "-0.02em", "$description": "Headings ≥ 2xl." },
+    "normal": { "$type": "dimension", "$value": "0" },
+    "wide": { "$type": "dimension", "$value": "0.06em", "$description": "Uppercase eyebrow labels only." }
+  }
+}

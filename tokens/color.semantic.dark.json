@@ -1,0 +1,64 @@
+{
+  "$description": "Semantic color roles — DARK theme. Principle: in dark mode solid fills are LIGHT with DARK text (accent, success, warning, danger), which keeps contrast high without glowing saturated blocks.",
+
+  "bg": { "$type": "color", "$value": "{color.ink.1000}" },
+  "bg-subtle": { "$type": "color", "$value": "{color.ink.950}" },
+  "bg-inset": { "$type": "color", "$value": "{color.ink.1000}" },
+  "bg-overlay": { "$type": "color", "$value": "{color.ink.1000} / 0.7" },
+  "surface": { "$type": "color", "$value": "{color.ink.950}" },
+  "surface-hover": { "$type": "color", "$value": "{color.ink.900}" },
+
+  "fg": { "$type": "color", "$value": "{color.ink.50}" },
+  "fg-muted": { "$type": "color", "$value": "{color.ink.400}" },
+  "fg-subtle": { "$type": "color", "$value": "{color.ink.600}" },
+  "fg-disabled": { "$type": "color", "$value": "{color.ink.700}" },
+  "fg-on-accent": { "$type": "color", "$value": "{color.ink.1000}" },
+  "fg-on-success": { "$type": "color", "$value": "{color.ink.1000}" },
+  "fg-on-warning": { "$type": "color", "$value": "{color.ink.1000}" },
+  "fg-on-danger": { "$type": "color", "$value": "{color.ink.1000}" },
+
+  "border": { "$type": "color", "$value": "{color.ink.900}" },
+  "border-subtle": { "$type": "color", "$value": "{color.ink.950}" },
+  "border-strong": { "$type": "color", "$value": "{color.ink.600}" },
+  "focus-ring": { "$type": "color", "$value": "{color.petrol.400}" },
+  "selection": { "$type": "color", "$value": "{color.petrol.800}" },
+
+  "accent": { "$type": "color", "$value": "{color.petrol.400}" },
+  "accent-hover": { "$type": "color", "$value": "{color.petrol.300}" },
+  "accent-active": { "$type": "color", "$value": "{color.petrol.200}" },
+  "accent-fg": { "$type": "color", "$value": "{color.petrol.300}" },
+  "accent-subtle": { "$type": "color", "$value": "{color.petrol.950}" },
+  "accent-subtle-fg": { "$type": "color", "$value": "{color.petrol.200}" },
+  "accent-border": { "$type": "color", "$value": "{color.petrol.800}" },
+
+  "link": { "$type": "color", "$value": "{color.petrol.300}" },
+  "link-hover": { "$type": "color", "$value": "{color.petrol.200}" },
+
+  "success": { "$type": "color", "$value": "{color.moss.400}" },
+  "success-fg": { "$type": "color", "$value": "{color.moss.300}" },
+  "success-subtle": { "$type": "color", "$value": "{color.moss.950}" },
+  "success-subtle-fg": { "$type": "color", "$value": "{color.moss.200}" },
+  "success-border": { "$type": "color", "$value": "{color.moss.800}" },
+
+  "warning": { "$type": "color", "$value": "{color.amber.400}" },
+  "warning-fg": { "$type": "color", "$value": "{color.amber.300}" },
+  "warning-subtle": { "$type": "color", "$value": "{color.amber.950}" },
+  "warning-subtle-fg": { "$type": "color", "$value": "{color.amber.200}" },
+  "warning-border": { "$type": "color", "$value": "{color.amber.800}" },
+
+  "danger": { "$type": "color", "$value": "{color.rust.500}" },
+  "danger-hover": { "$type": "color", "$value": "{color.rust.400}" },
+  "danger-fg": { "$type": "color", "$value": "{color.rust.300}" },
+  "danger-subtle": { "$type": "color", "$value": "{color.rust.950}" },
+  "danger-subtle-fg": { "$type": "color", "$value": "{color.rust.200}" },
+  "danger-border": { "$type": "color", "$value": "{color.rust.800}" },
+
+  "shadow": { "$type": "color", "$value": "oklch(0 0 0 / 0.6)" },
+
+  "chart-1": { "$type": "color", "$value": "{color.petrol.400}" },
+  "chart-2": { "$type": "color", "$value": "{color.amber.400}" },
+  "chart-3": { "$type": "color", "$value": "{color.plum.400}" },
+  "chart-4": { "$type": "color", "$value": "{color.moss.400}" },
+  "chart-5": { "$type": "color", "$value": "{color.rust.400}" },
+  "chart-6": { "$type": "color", "$value": "{color.ink.500}" }
+}
