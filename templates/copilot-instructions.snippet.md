@@ -9,7 +9,7 @@ This project follows the **b0t-at design foundation**: https://github.com/b0t-at
 
 Non-negotiables:
 
-- Use the shared tokens (`--b0t-*` CSS variables via the `b0t.css` bundle — vendored with `gh api` while the design repo is private, CDN once it is public — or the Tailwind v4 theme from `@b0t-at/design`). No hex codes, no Tailwind default palette, no primitive scales in project code.
+- Use the shared tokens (`--b0t-*` CSS variables via the `b0t.css` CDN bundle, or the Tailwind v4 theme from `@b0t-at/design`). No hex codes, no Tailwind default palette, no primitive scales in project code.
 - Fonts: IBM Plex Sans (400/500/600) for UI, IBM Plex Mono for identifiers and code. No other fonts.
 - Icons: Lucide, 16px in controls, stroke 1.75. No emoji in UI.
 - One petrol primary action per view. Success/warning/danger colors only for state.

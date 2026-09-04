@@ -14,7 +14,7 @@ Review pass after the initial release.
 - **Added:** version stamp in every generated file; `version` export in `dist/tokens.mjs` and `dist/tokens.json`.
 - **Changed:** the `t` hook in the wordmark is a true circular arc (`a12 12 0 0 0 12 12`) so SVG and PNG geometry match exactly.
 - **Changed:** inline wordmark snippets carry `height="24"` and a color fallback so they degrade sanely if the stylesheet fails to load.
-- **Docs:** consumption paths rewritten — the repo is private, so the CDN path is documented as "once public"; vendoring via `gh api` and npm-from-GitHub (with CI token note) are the working paths today.
+- **Docs:** consumption paths rewritten — CDN (jsDelivr) as primary, vendored bundle via `curl`, npm-from-GitHub; pinning guidance.
 - **Docs:** showcase honours the 12px text floor; `theme-color` meta added.
 
 ## 0.1.0 — 2026-09-04

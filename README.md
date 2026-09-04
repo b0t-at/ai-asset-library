@@ -8,8 +8,6 @@ Tokens, CSS, a Tailwind theme, brand assets and written guidelines that make eve
 
 ## Use it in a project
 
-> The repository is currently **private**, so the jsDelivr CDN URLs will 404 until it is made public. Meanwhile vendor the bundle (`gh api -H "Accept: application/vnd.github.raw" repos/b0t-at/ai-asset-library/contents/css/b0t.css > static/b0t.css`) or install via npm from GitHub — see [`docs/for-agents.md`](docs/for-agents.md).
-
 Plain HTML / server-rendered:
 
 ```html
